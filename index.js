@@ -141,7 +141,7 @@ cron.schedule('0 0 1 * *', async () => {
   console.log('Generating Monthly Sales Report...');
 });
 
-const PORT = process.env.PORT || 5005;
+const PORT = process.env.PORT;
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Backend API. The server is running!');
