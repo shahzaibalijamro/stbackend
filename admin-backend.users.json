@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "67a4b740d1c5fdd823fc3d6c"
+  },
+  "name": "Technicain",
+  "email": "technician@gmail.com",
+  "password": "$2a$10$T55dKpLvUlQl376tPPqnKe9ka7HrDyOrMtOc.Ej9JpKAh0r00TxDS",
+  "role": "technical",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a4b75dd1c5fdd823fc3d6f"
+  },
+  "name": "Super Admin",
+  "email": "superadmin@gmail.com",
+  "password": "$2a$10$.Cfeqhv4axp4zFsfNShXuOU4rgaMMmJc/Mk3eGMP23cBLs9mrHDU6",
+  "role": "superadmin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a4b784d1c5fdd823fc3d72"
+  },
+  "name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "$2a$10$aiJ09F.w0Lc9dMz6VLNelu4Dt4pYQCvlAmdivxhvWPePJ1zJBIFUy",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a4ce42c59c44846c45d1b8"
+  },
+  "name": "technician2",
+  "email": "technician2@gmail.com",
+  "password": "$2a$10$/45R7vVrV0628fRTxsWWP.iAYariKf2sC3M76r/LFeMsBhJCv.Vcy",
+  "role": "technical",
+  "__v": 0
+}]

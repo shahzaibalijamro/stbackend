@@ -1,0 +1,19 @@
+{
+    "deviceType": {
+        "mobile":{
+            "samsung":["galaxy a7", "galaxy s8", "galaxy s9"], 
+            "iphone":["iphone 6", "iphone 7", "iphone 8"], 
+            "nokia":["nokia 8", "nokia 9"], 
+            "motorola":["moto g5", "moto g6"]
+        },
+         "tablet":{
+            "ipad":["ipad pro", "ipad mini"], 
+            "kindle":["kindle fire", "kindle fire hd 8.9"]
+        },  
+         "laptop": {
+            "dell":["dell inspiron", "dell latitude"], 
+            "hp":["hp 15", "hp 17"], 
+            "lenovo":["lenovo ideapad", "lenovo thinkpad"]
+            }
+        }
+}
