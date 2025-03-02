@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
-  arrivalCost : {
-    type :Number 
+  arrivalCost: {
+    type: Number,
   },
   deviceType: {
     type: String,
@@ -34,7 +34,7 @@ const ProductSchema = new mongoose.Schema({
   },
   imei: {
     type: String,
-    unique: true
+    unique: true,
   },
   info: {
     type: String,
@@ -60,12 +60,13 @@ const ProductSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: [
-      "To Be Repaired",
-      "Ready for Sale",
-      "In Progress",
-      "In Confirmation",
+      'To Be Repaired',
+      'Ready for Sale',
+      'In Progress',
+      'In Confirmation',
+      'Reserved',
     ], // Define allowed values
-    default: "Ready for Sale", // Set a default status
+    default: 'Ready for Sale', // Set a default status
     required: true,
   },
 
@@ -121,11 +122,12 @@ const ProductSchema = new mongoose.Schema({
   },
   paymentStatus: {
     type: String,
-    enum: ["To Pay", "Paid"],
-    default: "To Pay",
+    enum: ['To Pay', 'Paid'],
+    default: 'To Pay',
   },
   paymentDate: { type: Date },
   deletionDate: { type: Date },
 });
 
-module.exports = mongoose.model("Product", ProductSchema);
+
+module.exports = mongoose.model('Product', ProductSchema);
