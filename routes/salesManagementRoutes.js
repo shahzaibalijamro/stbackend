@@ -4,6 +4,11 @@ const salesManagementController = require('../controllers/SalesManagementControl
 
 // CRUD routes for Sales Management
 router.get('/', salesManagementController.getAllSales); // Get all sales records
+router.get(
+  '/getsalesofrepairedproducts',
+  salesManagementController.getSalesDataOfRepairedProducts
+);
+// Get all sales of repaired products
 router.get('/:id', salesManagementController.getSaleById); // Get a sale record by ID
 router.post('/', salesManagementController.createSale); // Create a new sale record
 router.patch('/:id', salesManagementController.updateSaleStatus); // Update a sale record by ID
