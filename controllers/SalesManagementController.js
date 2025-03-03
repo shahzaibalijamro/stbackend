@@ -118,3 +118,22 @@ exports.deleteSalesData = async (req, res) => {
     res.status(500).json({ error: 'Error deleting sales data.' });
   }
 };
+// get sales of repaired products
+exports.getSalesDataOfRepairedProducts = async (req, res) => {
+  try {
+    const sales = await SalesManagement.find(
+      {
+        'products.repairInfo.technician': { $type: 'object' },
+        'products.paymentStatus': 'To Pay', // Ensure paymentStatus is 'To Pay'
+      },
+      { 'products.$': 1 } // Select only the matching product
+    );
+
+    const products = sales.map((sale) => sale.products[0]); // Extracting the matched product
+
+    return res.status(200).json({ products });
+  } catch (err) {
+    console.log('Internal Server Error ', err);
+    res.status(500).json({ message: 'Internal Server Error', error: err });
+  }
+};
