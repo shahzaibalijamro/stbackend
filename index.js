@@ -44,6 +44,7 @@ app.use('/api/technical', require('./routes/technicalRoute')); // Sales routes
 app.use('/api/cost-material', require('./routes/costMaterialRoutes')); // Sales routes
 app.use('/api/cost-technical', require('./routes/costTechnicalRoutes')); // Sales routes
 app.use('/api/payments', require('./routes/paymentRoutes')); // Sales routes
+app.use('/api/commission', require('./routes/commissionRoutes')); // Commison Routes
 app.use('/api/models', async (req, res) => {
   try {
     const devices = await DeviceType.find({});
