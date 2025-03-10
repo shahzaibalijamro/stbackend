@@ -419,3 +419,25 @@ exports.updateOriginalPrice = async (req, res) => {
     return res.status(500).json({ message: "Server error", error });
   }
 };
+
+exports.updateSoldFlag = async (req, res) => {
+  try {
+    const { id } = req.params; // Extract product ID from the request parameters
+
+    const updatedProduct = await Product.findByIdAndUpdate(id, {
+      soldRepaired: true,
+    });
+
+    if (!updatedProduct) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    return res.status(200).json({
+      message: 'Sold Flag Updated Successfully',
+      updatedProduct,
+    });
+  } catch (err) {
+    console.log('Error [UPDATING SOLD FLAG]');
+    return res.status(500).json({ message: 'Server error', err });
+  }
+};

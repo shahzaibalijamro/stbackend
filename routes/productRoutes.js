@@ -13,7 +13,8 @@ const {
   getReturnHistory,
   deviceForTest,
   updateProductStatusAndGrade,
-  updateProductStatusWithReason, // Import the new updateProductStatus function
+  updateProductStatusWithReason,
+  updateSoldFlag, // Import the new updateProductStatus function
 } = require("../controllers/productController");
 const { adminAuth } = require("../middleware/auth"); // Ensure `adminAuth` is imported correctly
 
@@ -56,5 +57,6 @@ router.patch("/updatestatus-with-reason/:id", updateProductStatusWithReason);
 router.patch("/updatestatus-grade/:id", updateProductStatusAndGrade);
 
 router.put("/update-original-price/:id", updateOriginalPrice);
+router.patch('/update-sold-flag/:id', updateSoldFlag);
 
 module.exports = router;

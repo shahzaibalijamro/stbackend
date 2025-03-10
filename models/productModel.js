@@ -127,6 +127,10 @@ const ProductSchema = new mongoose.Schema({
   },
   paymentDate: { type: Date },
   deletionDate: { type: Date },
+  soldRepaired: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 
