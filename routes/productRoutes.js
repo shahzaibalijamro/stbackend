@@ -14,7 +14,8 @@ const {
   deviceForTest,
   updateProductStatusAndGrade,
   updateProductStatusWithReason,
-  updateSoldFlag, // Import the new updateProductStatus function
+  updateSoldFlag,
+  getAllSoldProducts, // Import the new updateProductStatus function
 } = require("../controllers/productController");
 const { adminAuth } = require("../middleware/auth"); // Ensure `adminAuth` is imported correctly
 
@@ -58,5 +59,8 @@ router.patch("/updatestatus-grade/:id", updateProductStatusAndGrade);
 
 router.put("/update-original-price/:id", updateOriginalPrice);
 router.patch('/update-sold-flag/:id', updateSoldFlag);
-
+// @route   GET /api/products/getallproducts
+// @desc    Get all products with sold repair true
+// @access  Public
+router.get('/getallproductswithsoldrepairflag', getAllSoldProducts);
 module.exports = router;

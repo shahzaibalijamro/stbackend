@@ -441,3 +441,16 @@ exports.updateSoldFlag = async (req, res) => {
     return res.status(500).json({ message: 'Server error', err });
   }
 };
+
+// @desc    Get all products  with sold repair true flag
+// @route   GET /api/products
+// @access  Public
+exports.getAllSoldProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ soldRepaired: true });
+    res.json(products);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+};
