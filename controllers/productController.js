@@ -197,7 +197,10 @@ exports.deviceForTest = async (req, res) => {
 // @access  Public
 exports.getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find({ soldRepaired: false });
+    if (products.length === 0) {
+      return res.json({ message: 'No Products Found' });
+    }
     res.json(products);
   } catch (err) {
     console.error(err.message);
@@ -229,7 +232,7 @@ exports.getProductByIdOrImei = async (req, res) => {
     }
 
     // If not found by _id, search directly by imei
-    const productByImei = await Product.findOne({ imei: identifier });
+    const productByImei = await Product.findOne({ imei: identifier,soldRepaired: false, });
 
     if (productByImei) {
       return res.json(productByImei);
